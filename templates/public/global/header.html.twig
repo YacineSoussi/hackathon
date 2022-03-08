@@ -4,23 +4,43 @@
 	<nav id="header" class="bg-white fixed w-full z-10 top-0 shadow pb-2">
 
 
-		<div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
+		<div
+			class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
 
-			<div class="w-1/2 pl-2 md:pl-0">
-				<div class="flex flex-row items-center text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold">
-
-					<a class="flex flex-row items-center" href="{{ path('compte_home') }}">
-						<img src="{{asset('assets')}}/img/app_logo.jpg" style="border-radius: 15px; height: 30px; width:30px" class=" text-pink-600 shadow rounded mr-3" alt="Logo"></img>
-					Wired Beauty
-				</a>
+			<!--<div class="w-1/2 pl-2 md:pl-0">
+																															<div class="flex flex-row items-center text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold">
+																											
+																																<a class="flex flex-row items-center" href="{{ path('compte_home') }}">
+																																	<img src="{{asset('assets')}}/img/app_logo.jpg" style="border-radius: 15px; height: 30px; width:30px" class=" text-pink-600 shadow rounded mr-3" alt="Logo"></img>
+																																Wired Beauty
+																															</a>
+																														</div>
+																													</div>-->
+			<div class="pt-2 pb-8">
+				<p class="wb">WB</p>
 			</div>
-		</div>
-		<div class="w-1/2 pr-0">
-			<div class="flex relative inline-block float-right">
-				<a href="{{path("app_login")}}" class="w-full bkg-gradient-new  rounded text-white font-bold text-xs hover:bg-gray-700 px-8 py-2 mr-1">Connexion</a>
+			<div class="w-full pr-0">
+				<div class="flex flex-row pt-8 pb-4 px-2 justify-between">
+					<div class="place">HOME</div>
+					<div class="about-usspartan-normal-masala-12px">WHAT WE DO</div>
+					<p class="servicespartan-normal-masala-12px">
+						NEW NOMADIC
+						<br/>LABGRADE DEVICE &amp; APP
+					</p>
+					<div class="blogspartan-normal-masala-12px">WHO WE ARE</div>
+					<div class="blog-1spartan-normal-masala-12px">SCIENTIFIC<br/>VALIDATION</div>
+					<div class="contactspartan-normal-masala-12px">
+						STUDIES &amp;
+						<br/>SERVICES
+					</div>
+					<div class="pr-0 flex relative inline-block float-right items-center">
+						<a href="{{path("app_login")}}" class="w-full bkg-primary rounded text-white font-bold text-xs hover:bg-gray-700 px-8 py-2 mr-1">Connexion</a>
+					</div>
+				</div>
+
+
 			</div>
 
 		</div>
-
-	</div>
-</nav></header>
+	</nav>
+</header>

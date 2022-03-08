@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      {% block head %}{% include('admin/global/head.html.twig') %}{% endblock %}
+        <style>
+
+        .font-family-karla {
+            font-family: karla;
+        }
+        @media screen and (min-width: 200px) and (max-width: 1724px) {
+          .bloc {
+              display:block;
+              clear:both;
+              max-width: 1280px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              border-radius: 20px;
+           }
+        }
+    
+    </style>
+    </head>
+    <body>
+     <!-- begin app -->
+    <div class="app flex flex-col h-screen justify-between ">
+     {% block header %}{% include('admin/global/header.html.twig') %}{% endblock %}
+        <!-- begin app-wrap -->
+        <main class="flex place-content-center bg-gray-100">
+        {% block body %}{% endblock %}
+        </main>
+        <!-- end app-wrap -->
+        {% block footer %}{% include('admin/global/footer.html.twig') %}{% endblock %}
+   
+   
+    </body>
+</html>

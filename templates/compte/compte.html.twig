@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block head %}
+			{% include('compte/global/head.html.twig') %}
+		{% endblock %}
+		<style>
+
+	
+			.font-family-karla {
+				font-family: karla;
+			}
+
+			.clamp-2 {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+
+			@media screen and(min-width: 200px) and(max-width: 1724px) {
+				.bloc {
+					display: block;
+					clear: both;
+					max-width: 1364px;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					border-radius: 20px;
+				}
+			}
+			.bkg-gradient {
+				background-image: -webkit-gradient(linear, left top, right top, from(#182da8), to(#a007a0)) !important;
+				background-image: linear-gradient(to right, #182da8, #a007a0) !important;
+			}
+
+			.bkg-gradient-2 {
+				background-image: -webkit-gradient(linear, left top, right top, from(#1578fb), to(#17ead7)) !important;
+				background-image: linear-gradient(to right, #1578fb, #17ead7) !important;
+			}
+
+			.bkg-gradient-5 {
+				background-image: -webkit-gradient(linear, left top, right top, from(#33333312), to(#76767612)) !important;
+				background-image: linear-gradient(to right, #33333312, #76767612) !important;
+			}
+
+			.bkg-gradient-3 {
+				background-image: -webkit-gradient(linear, left top, right top, from(#1f379a), to(#af42f0)) !important;
+				background-image: linear-gradient(to right, #1f379a, #af42f0) !important;
+			}
+
+			.bkg-gradient-new {
+				background-image: -webkit-gradient(221deg, from(#af42f0), to(#1f379a)) !important;
+				background-image: linear-gradient(221deg, #af42f0, #1f379a) !important;
+			}
+
+			.bkg-gradient-new-light {
+				background-image: -webkit-gradient(221deg, from(#eddbf4), to(#eddbf4)) !important;
+				background-image: linear-gradient(221deg, #eddbf4, #eddbf4) !important;
+			}
+			.scroll-content {
+				overflow: scroll;
+				overflow-x: hidden;
+			}
+			::-webkit-scrollbar {
+				width: 0; /* Remove scrollbar space */
+				background: transparent; /* Optional: just make scrollbar invisible */
+			}
+			/* Optional: show position indicator in red */
+			::-webkit-scrollbar-thumb {
+				background: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- begin app -->
+		<div class="app flex flex-col h-screen justify-between text-black">
+			{% block header %}
+				{% include('compte/global/header.html.twig') %}
+			{% endblock %}
+			<!-- begin app-wrap -->
+			<main class="flex place-content-center bg-gray-100 "> {% block body %}{% endblock %}
+				</main>
+				<!-- end app-wrap -->
+				{% block footer %}
+					{% include('compte/global/footer.html.twig') %}
+				{% endblock %}
+			</body>
+		</body>
+	</html>

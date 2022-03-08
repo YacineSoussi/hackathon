@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@symfony/stimulus-bridge": "^3.0.0",
+    "@symfony/webpack-encore": "^1.7.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "autoprefixer": "^10.4.0",
+    "postcss-loader": "^6.2.1",
+    "tailwindcss": "^2.2.19",
+    "webpack-notifier": "^1.6.0"
+  },
+  "dependencies": {}
+}

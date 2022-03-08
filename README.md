@@ -21,7 +21,4 @@ composer require symfonycasts/verify-email-bundle
 
 # for gpg export GPG_TTY=$(tty)
 
-# Load the fixtures
-docker-compose exec php bin/console doctrine:fixtures:load
-
 # added "daisyui" cdn to app it permit addition of styled tailwind components

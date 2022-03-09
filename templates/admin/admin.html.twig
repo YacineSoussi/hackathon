@@ -1,37 +1,31 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-      {% block head %}{% include('admin/global/head.html.twig') %}{% endblock %}
-        <style>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Admin Dashboard</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href="{{ asset('assets/css/tailwind.output.css') }}"/>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+		<script src="{{ asset('assets/js/init-alpine.js') }}"></script>
+	</head>
+	<body>
+		<div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
 
-        .font-family-karla {
-            font-family: karla;
-        }
-        @media screen and (min-width: 200px) and (max-width: 1724px) {
-          .bloc {
-              display:block;
-              clear:both;
-              max-width: 1280px;
-              margin-top: 10px;
-              margin-bottom: 10px;
-              border-radius: 20px;
-           }
-        }
-    
-    </style>
-    </head>
-    <body>
-     <!-- begin app -->
-    <div class="app flex flex-col h-screen justify-between ">
-     {% block header %}{% include('admin/global/header.html.twig') %}{% endblock %}
-        <!-- begin app-wrap -->
-        <main class="flex place-content-center bg-gray-100">
-        {% block body %}{% endblock %}
-        </main>
-        <!-- end app-wrap -->
-        {% block footer %}{% include('admin/global/footer.html.twig') %}{% endblock %}
-   
-   
-    </body>
+			{% include('admin/global/sidebar.html.twig') %}
+
+			<div class="flex flex-col flex-1">
+				{% include('admin/global/header.html.twig') %}
+				<main
+					class="h-full pb-16 overflow-y-auto">
+					<!-- Remove everything INSIDE this div to a really blank page -->
+					<div class="container px-6 mx-auto grid">
+						<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+							Blank
+						</h2>
+					</div>
+				</main>
+			</div>
+		</div>
+	</body>
 </html>

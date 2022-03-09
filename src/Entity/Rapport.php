@@ -37,6 +37,11 @@ class Rapport
      */
     private $rapportMesures;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $excel;
+
     public function __construct()
     {
         $this->rapportMesures = new ArrayCollection();
@@ -97,6 +102,18 @@ class Rapport
                 $rapportMesure->setRapport(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getExcel(): ?string
+    {
+        return $this->excel;
+    }
+
+    public function setExcel(?string $excel): self
+    {
+        $this->excel = $excel;
 
         return $this;
     }

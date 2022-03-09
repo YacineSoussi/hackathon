@@ -6,6 +6,11 @@ x-cache-from:
       - php:8.0-fpm
 
 services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
   db:
     image: postgres:13-alpine
     restart: always
@@ -19,16 +24,6 @@ services:
       - target: 5432
         published: 5432
         protocol: tcp
-
-  phpmyadmin:
-    depends_on:
-    - db
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - 8088:80
-    environment:
-      PMA_HOST: db
 
   php:
     image: php:8.0-fpm

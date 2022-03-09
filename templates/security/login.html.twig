@@ -26,13 +26,11 @@
 							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 						{% endif %}
 
-						{% if app.user %}
-							<div class="mb-3">
-								You are logged in as
-								{{ app.user.username }},
-								<a class="text-red-400" href="{{ path('app_logout') }}">Logout</a>
+						{% for message in app.flashes('message') %}
+							<div class="alert alert-success m-l-15 m-r-15 m-b-0 m-t-15" role="alert">
+								{{ message}}
 							</div>
-						{% endif %}
+						{% endfor %}
 						<div class="flex flex-col pt-4">
 							<label for="inputEmail" class="text-lg">Email</label>
 							<input name="email" class="form-control" autocomplete="email" required autofocus type="email" id="inputEmail" value="{{ last_username }}" placeholder="your@email.com" style="filter: drop-shadow(0 0 0.15rem gray); height: 40px; padding-left: 5px; padding-right: 5px; margin-top: 10px" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
@@ -59,8 +57,8 @@
 
 					</form>
 					<div class="text-center pt-12 pb-12">
-						<p>Don't have an account?
-							<a href="{{ path('app_register') }}" class="underline font-semibold">Register here.</a>
+						<p>Don't have an Forgot your password ?
+							<a href="{{ path('app_forgotten_password') }}" class="underline font-semibold">Click here.</a>
 						</p>
 					</div>
 				</div>

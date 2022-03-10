@@ -158,8 +158,8 @@ class RegistrationController extends AbstractController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasherInterface): Response
+    #[Route('/admin/register', name: 'app_register')]
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasherInterface, MailerInterface $mailer): Response
     {
         $user = new User();
         
@@ -172,7 +172,6 @@ class RegistrationController extends AbstractController
             $user->setRoles(['ROLE_USER']);
         }
         if ($form->isSubmitted() && $form->isValid()) {
-            dump("after",$user);
             // encode the password
             $user->setPassword(
             $userPasswordHasherInterface->hashPassword(
@@ -185,14 +184,13 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // generate a signed url and email it to the user
-            /*$this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-                (new TemplatedEmail())
-                    ->from(new Address('therecettessympfony@gmail.com', 'Therecettes'))
-                    ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
-            );*/
+            $email = (new TemplatedEmail())
+                ->from(new Address('no-reply@wired-beauty.fr', 'WiredBeauty'))
+                ->to($user->getEmail())
+                ->subject('Bienvenue chez Wired Beauty')
+                ->htmlTemplate('email/activation.html.twig');
+
+            $mailer->send($email);
             // do anything else you need here, like send an email
             return $this->redirectToRoute('app_login');
         }

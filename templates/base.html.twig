@@ -1,106 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome Bro!
-			{% endblock %}
-		</title>
-		<script src="https://kit.fontawesome.com/f956c32298.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-		<link
-		href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-		<!--For daisyui-->
-		<link href="https://cdn.jsdelivr.net/npm/daisyui@2.2.1/dist/full.css" rel="stylesheet" type="text/css"/>
-        <script src="https://cdn.tailwindcss.com"></script>
-		<style>
-
-.text-red 
-{
-	color: red;
-	font-size: 10px;
-}
-			.font-family-karla {
-				font-family: karla;
-			}
-
-			.clamp-2 {
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				-webkit-box-orient: vertical;
-			}
-
-			@media screen and(min-width: 200px) and(max-width: 1724px) {
-				.bloc {
-					display: block;
-					clear: both;
-					max-width: 1364px;
-					margin-top: 10px;
-					margin-bottom: 10px;
-					border-radius: 20px;
-				}
-			}
-			.bkg-gradient {
-				background-image: -webkit-gradient(linear, left top, right top, from(#182da8), to(#a007a0)) !important;
-				background-image: linear-gradient(to right, #182da8, #a007a0) !important;
-			}
-
-			.bkg-gradient-2 {
-				background-image: -webkit-gradient(linear, left top, right top, from(#1578fb), to(#17ead7)) !important;
-				background-image: linear-gradient(to right, #1578fb, #17ead7) !important;
-			}
-
-			.bkg-gradient-5 {
-				background-image: -webkit-gradient(linear, left top, right top, from(#33333312), to(#76767612)) !important;
-				background-image: linear-gradient(to right, #33333312, #76767612) !important;
-			}
-
-			.bkg-gradient-3 {
-				background-image: -webkit-gradient(linear, left top, right top, from(#1f379a), to(#af42f0)) !important;
-				background-image: linear-gradient(to right, #1f379a, #af42f0) !important;
-			}
-
-			.bkg-gradient-new {
-				background-image: -webkit-gradient(221deg, from(#af42f0), to(#1f379a)) !important;
-				background-image: linear-gradient(221deg, #af42f0, #1f379a) !important;
-			}
-
-			.bkg-gradient-new-light {
-				background-image: -webkit-gradient(221deg, from(#eddbf4), to(#eddbf4)) !important;
-				background-image: linear-gradient(221deg, #eddbf4, #eddbf4) !important;
-			}
-			html {
-				overflow: scroll;
-				overflow-x: hidden;
-			}
-			::-webkit-scrollbar {
-				width: 0; /* Remove scrollbar space */
-				background: transparent; /* Optional: just make scrollbar invisible */
-			}
-			/* Optional: show position indicator in red */
-			::-webkit-scrollbar-thumb {
-				background: #FF0000;
-			}
-		</style>
-		{# Run `composer require symfony/webpack-encore-bundle`
-						           and uncomment the following Encore helpers to start using Symfony UX #}
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
-		{% endblock %}
-
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
-		<style>
-			.violet_gradient {
-				background-color: #9921e8;
-				background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
-			}
-		</style>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Login - Windmill Dashboard</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href="../assets/css/tailwind.output.css"/>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+		<script src="../assets/js/init-alpine.js"></script>
 	</head>
-	<body class="flex place-content-center bg-gray-100">
-		<div class="bg-white font-family-karla min-h-screen w-4/5 bloc" style="margin-top: 60px"> {% block body %}{% endblock %}
-			</div>
-		</body>
-	</html>
+	<body>
+		{% block body %}{% endblock %}
+	</body>
+</html>

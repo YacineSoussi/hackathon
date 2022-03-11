@@ -1,59 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Hello</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.output.css') }}"/>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer="defer"></script>
-    <script src="{{ asset('assets/js/init-alpine.js') }}"></script>
+{% extends 'admin/admin.html.twig' %}
 
-  </head>
-  <body>
-    <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
+{% block title %}Reports
+{% endblock %}
 
-      {% include('admin/global/sidebar.html.twig') %}
-
-      <div class="flex flex-col flex-1">
-        {% include('admin/global/header.html.twig') %}
-        <main class="h-full pb-16 overflow-y-auto">
-          <!-- Remove everything INSIDE this div to a really blank page -->
-          <div class="container px-6 mx-auto grid">
-            <h2 class="text-center my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 mb-20">
-              Liste des clients
-            </h2>
-
-           
-<div class="container table-responsive py-5"> 
-<table class="container">
-  <thead class="thead-dark">
-    <tr class="mb-20">
-      <th style="text-align: left;">Lastname</th>
-      <th style="text-align: left;">Firstname</th>
-      <th style="text-align: left;">company</th>
-      <th style="text-align: left;">mail</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for user in users %}
-       <tr>
-      <td>{{user.lastname}}</td>
-      <td>{{user.firstname}}</td>
-      <td>{{user.company}}</td>
-      <td>{{user.email}}</td>
-      <td><button>Modifier</button></td>
-    </tr>
-  {% endfor %}
-   
-  </tbody>
-</table>
-</div>
+{% block body %}
+	<div class="container px-6 mx-auto grid">
+		<h2 class="text-center my-6 text-2xl font-semibold text-gray-700">
+			Liste des clients
+		</h2>
 
 
-          </div>
-        </main>
-      </div>
-    </div>
-  </body>
-</html>
+		<div class="container table-responsive py-5">
+			<table class="container">
+				<thead class="thead-dark">
+					<tr class="mb-20">
+						<th style="text-align: left;">Lastname</th>
+						<th style="text-align: left;">Firstname</th>
+						<th style="text-align: left;">company</th>
+						<th style="text-align: left;">mail</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in users %}
+						<tr>
+							<td>{{user.lastname}}</td>
+							<td>{{user.firstname}}</td>
+							<td>{{user.company}}</td>
+							<td>{{user.email}}</td>
+							<td>
+								<button>Modifier</button>
+							</td>
+						</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+
+{% endblock %}

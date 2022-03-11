@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8"/>
@@ -8,9 +7,10 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/tailwind.output.css') }}"/>
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 		<script src="{{ asset('assets/js/init-alpine.js') }}"></script>
+		{% include('admin/global/head.html.twig') %}
 	</head>
-	<body>
-		<div class="flex h-screen bg-gray-50" :class="{ 'overflow-hidden': isSideMenuOpen}">
+	{% block body %}
+		<div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
 
 			{% include('admin/global/sidebar.html.twig') %}
 
@@ -20,12 +20,12 @@
 					class="h-full pb-16 overflow-y-auto">
 					<!-- Remove everything INSIDE this div to a really blank page -->
 					<div class="container px-6 mx-auto grid">
-						<h2 class="my-6 text-2xl font-semibold text-gray-700">
-							Blank
+						<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+							
 						</h2>
 					</div>
 				</main>
 			</div>
 		</div>
-	</body>
+	{% endblock %}
 </html>

@@ -17,33 +17,40 @@
 
 
 		{{ form_start(registrationForm) }}
-		<label class="block text-sm">
-			{{ form_row(registrationForm.email, { 'attr': {'class': 'mb-2 mt-2 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
+		<label class="block text-sm text-gray-600">
+			{{ form_row(registrationForm.email, { 'attr': {'class': 'mb-2 mt-2 block w-full mt-1 text-sm focus:border-blue-400 focus:outline-none focus:shadow-outline-blue form-input'} }) }}
 		</label>
-		<label class="block text-sm">
-			{{ form_row(registrationForm.company, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
+		<label class="block text-sm text-gray-600">
+			{{ form_row(registrationForm.company, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-blue-400 focus:outline-none focus:shadow-outline-blue form-input'} }) }}
 		</label>
-		<label class="block text-sm">
-			{{ form_row(registrationForm.lastname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
+		<label class="block text-sm text-gray-600">
+			{{ form_row(registrationForm.lastname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-blue-400 focus:outline-none focus:shadow-outline-blue form-input'} }) }}
 		</label>
-		<label class="block text-sm">
-			{{ form_row(registrationForm.firstname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
+		<label class="block text-sm text-gray-600">
+			{{ form_row(registrationForm.firstname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-blue-400 focus:outline-none focus:shadow-outline-blue form-input'} }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="block text-sm text-gray-600">
 			{{ form_row(registrationForm.plainPassword, {
             label: 'Password',
-            'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'}
+            'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-blue-400 focus:outline-none focus:shadow-outline-blue form-input'}
         }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="block text-sm text-gray-600">
 			{{ form_row(registrationForm.imageFile, { label: 'Upload your logo', 'attr':{'class': 'bg-gray-100  mt-2'}})}}
 		</label>
-		<label class="block text-sm">
-			{{ form_row(registrationForm.agreeTerms, {'attr':{'class': 'bg-red-500 mx-2 mt-4'}}) }}
-		</label>
-		<label class="block text-sm">
-			{{ form_row(registrationForm.role, { label: 'Admin Role ', 'attr':{'class': 'bg-red-500 mx-2 mt-4'}}) }}
-		</label>
+		<div class="flex flex-row">
+			<div class="basis-1/2">
+				<label class="block text-sm text-gray-600">
+					{{ form_row(registrationForm.agreeTerms, {'attr':{'class': 'bg-red-500 mx-2 mt-4'}}) }}
+				</label>
+			</div>
+			<div class="basis-1/2">
+				<label class="block text-sm text-gray-600">
+					{{ form_row(registrationForm.role, { label: 'Admin Role ', 'attr':{'class': 'bg-red-500 mx-2 mt-4'}}) }}
+				</label>
+
+			</div>
+		</div>
 		<button type="submit" class="w-full bkg-gradient-3  text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">Register</button>
 		{{ form_end(registrationForm) }}
 

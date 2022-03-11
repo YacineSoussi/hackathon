@@ -9,22 +9,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-   
+
     /*************************PUBLIC*************************/
     #[Route('/', name: 'home')]
     public function index(): Response
-    {   
-        return $this->render('public/home/index.html.twig', [
-            'controller_name' => 'HomeController',
-           
-        ]);
+    {
+        return $this->redirectToRoute("admin_home");
     }
 
     /********************COMPTE****************************/
 
     #[Route('/compte/home', name: 'compte_home')]
     public function index_compte(): Response
-    {  
+    {
         return $this->render('compte/home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
@@ -39,5 +36,4 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
 }

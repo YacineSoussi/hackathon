@@ -1,13 +1,17 @@
 {% extends './admin/admin.html.twig' %}
 
-{% block title %}Edit {{user.lastname}} {{user.firstname}}
+{% block title %}Edit
+	{{user.lastname}}
+	{{user.firstname}}
 {% endblock %}
 
 {% block body %}
 
 	<!-- General elements -->
 	<h4 class="mb-4 text-lg font-semibold text-gray-600  text-center mt-5">
-		Edit {{user.lastname}} {{user.firstname}}
+		Edit
+		{{user.lastname}}
+		{{user.firstname}}
 	</h4>
 
 	<div class="px-6 py-3 mb-8 bg-white rounded-lg shadow-md max-w-2xl mx-auto ">
@@ -17,22 +21,22 @@
 
 
 		{{ form_start(form) }}
-		<label class="block text-sm">
+		<label class="text-gray-600 block text-sm">
 			{{ form_row(form.email, { 'attr': {'class': 'mb-2 mt-2 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="text-gray-600 block text-sm">
 			{{ form_row(form.company, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="text-gray-600 block text-sm">
 			{{ form_row(form.lastname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="text-gray-600 block text-sm">
 			{{ form_row(form.firstname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
-		<label class="block text-sm">
+		<label class="text-gray-600 block text-sm">
 			{{ form_row(form.imageFile, { label: 'Upload your logo', 'attr':{'class': 'bg-gray-100  mt-2'}})}}
 		</label>
-		<button type="submit" class="w-full bkg-gradient-3  text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">Edit</button>
+		<button type="submit" class="flex items-center mt-5 mx-auto justify-center w-1/2 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-purple">Edit</button>
 		{{ form_end(form) }}
 
 	</div>

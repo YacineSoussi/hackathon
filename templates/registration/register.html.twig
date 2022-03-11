@@ -11,14 +11,8 @@
 
 			<div
 				class="w-full  flex flex-col md:w-2/3 pt-8">
-
-				{#<div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-12">
-																																					<img src="{{asset('assets')}}/img/app_logo.jpg" style="border-radius: 30px; height: 60px; width:60px" class="shadow rounded  p-2" alt="Logo"></img>
-																																			</div>#}
-
-
 				<div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-					<p class="text-center text-3xl">Join Us.</p>
+					<p class="text-center text-3xl">Create customer</p>
 
 					{% for flashError in app.flashes('verify_email_error') %}
 						<div class="alert alert-danger  mt-3 mb-3" role="alert">{{ flashError }}</div>
@@ -26,13 +20,15 @@
 
 					{{ form_start(registrationForm) }}
 					{{ form_row(registrationForm.email, { 'attr': {'class': 'mb-4 mt-2 flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'} }) }}
-					{{ form_row(registrationForm.username, { 'attr': {'class': 'mt-2 mb-4 flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'} }) }}
+					{{ form_row(registrationForm.company, { 'attr': {'class': 'mt-2 mb-4 flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'} }) }}
+					{{ form_row(registrationForm.lastname, { 'attr': {'class': 'mt-2 mb-4 flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'} }) }}
+					{{ form_row(registrationForm.firstname, { 'attr': {'class': 'mt-2 mb-4 flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'} }) }}
 					{{ form_row(registrationForm.plainPassword, {
             label: 'Password',
             'attr': {'class': 'flex flex-col w-full shadow appearance-none border rounded w-full py-2.5 px-3 mt-2mb-4  text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'}
         }) }}
 					<div class="mt-4">
-						{{ form_row(registrationForm.imageFile, { label: 'Upload your profile image', 'attr':{'class': 'bg-gray-100  mt-2'}})}}
+						{{ form_row(registrationForm.imageFile, { label: 'Upload your logo', 'attr':{'class': 'bg-gray-100  mt-2'}})}}
 					</div>
 					<div class="flex flex-row w-full justify-between">
 						{{ form_row(registrationForm.agreeTerms, {'attr':{'class': 'bg-red-500 mx-2 mt-4'}}) }}
@@ -40,13 +36,6 @@
 					</div>
 					<button type="submit" class="w-full bkg-gradient-3  text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">Register</button>
 					{{ form_end(registrationForm) }}
-
-
-					<div class="text-center pt-12 pb-12">
-						<p>Already have an account?
-							<a href="{{ path('app_login') }}" class="underline font-semibold">Log in here.</a>
-						</p>
-					</div>
 				</div>
 			</div>
 

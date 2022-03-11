@@ -6,11 +6,11 @@
 {% block body %}
 
 	<!-- General elements -->
-	<h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 text-center mt-5">
+	<h4 class="mb-4 text-lg font-semibold text-gray-600  text-center mt-5">
 		Create customer
 	</h4>
 
-	<div class="px-6 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800 max-w-2xl mx-auto ">
+	<div class="px-6 py-3 mb-8 bg-white rounded-lg shadow-md max-w-2xl mx-auto ">
 		{% for flashError in app.flashes('verify_email_error') %}
 			<div class="alert alert-danger  mt-3 mb-3" role="alert">{{ flashError }}</div>
 		{% endfor %}
@@ -18,21 +18,21 @@
 
 		{{ form_start(registrationForm) }}
 		<label class="block text-sm">
-			{{ form_row(registrationForm.email, { 'attr': {'class': 'mb-2 mt-2 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'} }) }}
+			{{ form_row(registrationForm.email, { 'attr': {'class': 'mb-2 mt-2 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
 		<label class="block text-sm">
-			{{ form_row(registrationForm.company, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'} }) }}
+			{{ form_row(registrationForm.company, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
 		<label class="block text-sm">
-			{{ form_row(registrationForm.lastname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'} }) }}
+			{{ form_row(registrationForm.lastname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
 		<label class="block text-sm">
-			{{ form_row(registrationForm.firstname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'} }) }}
+			{{ form_row(registrationForm.firstname, { 'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'} }) }}
 		</label>
 		<label class="block text-sm">
 			{{ form_row(registrationForm.plainPassword, {
             label: 'Password',
-            'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'}
+            'attr': {'class': 'mt-2 mb-4 block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input'}
         }) }}
 		</label>
 		<label class="block text-sm">

@@ -20,6 +20,8 @@ http://127.0.0.1:8001
 ```
 # lancer la commande : git clone git@github.com:corneliusthefirst/hakaton-admin.git client
 
+# Se rendre dans le dossier client : cd client
+
 # npm install 
 
 # npm start

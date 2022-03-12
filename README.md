@@ -12,14 +12,21 @@ docker-compose exec php bin/console doctrine:schema:update --force
 
 ```
 
-Se rendre dans le dossier client pour lancer le serveur react.
-
 ```
 # URL SYMFONY
 http://127.0.0.1:8001
 
-# URL REACT
+# UTILISATION DE REACT POUR LE RAPPORT 
+```
+# lancer la commande : git clone git@github.com:corneliusthefirst/hakaton-admin.git client
+
+# npm install 
+
+# npm start
+
 http://127.0.0.1:3000
+
+```
 
 # Env DB
 DATABASE_URL="postgresql://postgres:password@db:5432/db?serverVersion=13&charset=utf8"

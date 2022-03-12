@@ -6,12 +6,12 @@ docker-compose up -d
 
 ```
 
+
+
+```
 docker-compose exec php bin/console d:s:u --dump-sql
 docker-compose exec php bin/console doctrine:schema:update
 docker-compose exec php bin/console doctrine:schema:update --force
-
-```
-
 ```
 # URL SYMFONY
 http://127.0.0.1:8001
